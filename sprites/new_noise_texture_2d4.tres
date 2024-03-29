@@ -1,0 +1,13 @@
+[gd_resource type="NoiseTexture2D" load_steps=3 format=3 uid="uid://b3hjac6bimydx"]
+
+[ext_resource type="FastNoiseLite" uid="uid://dg7kasp0v50s0" path="res://sprites/new_fast_noise_lite4.tres" id="1_14tn4"]
+
+[sub_resource type="Gradient" id="Gradient_oiski"]
+offsets = PackedFloat32Array(0.0607903, 0.24924, 0.72997, 0.781155, 0.949555, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0.801626, 1, 1, 1, 1)
+
+[resource]
+height = 256
+normalize = false
+color_ramp = SubResource("Gradient_oiski")
+noise = ExtResource("1_14tn4")

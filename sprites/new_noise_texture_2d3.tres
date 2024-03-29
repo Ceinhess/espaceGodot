@@ -1,0 +1,11 @@
+[gd_resource type="NoiseTexture2D" load_steps=3 format=3 uid="uid://dq254ch3qpeoc"]
+
+[ext_resource type="Gradient" uid="uid://ejfjys1wbu3l" path="res://sprites/new_gradient1.tres" id="1_fy4h4"]
+[ext_resource type="FastNoiseLite" uid="uid://o7rrc0oosji" path="res://sprites/new_fast_noise_lite.tres" id="2_gov6v"]
+
+[resource]
+height = 256
+generate_mipmaps = false
+normalize = false
+color_ramp = ExtResource("1_fy4h4")
+noise = ExtResource("2_gov6v")

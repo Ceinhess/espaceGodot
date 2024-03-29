@@ -1,0 +1,71 @@
+[gd_scene load_steps=15 format=3 uid="uid://7fvoac0edh7y"]
+
+[ext_resource type="Script" path="res://scripts/node_2d.gd" id="1_n07op"]
+[ext_resource type="PackedScene" uid="uid://bc2rpwvrprqw0" path="res://scripts/player.tscn" id="1_suy00"]
+[ext_resource type="Texture2D" uid="uid://c46jqtqob0c7u" path="res://sprites/new_noise_texture_2d2.tres" id="2_8ph0p"]
+[ext_resource type="Texture2D" uid="uid://ceuu5mxljp28g" path="res://sprites/new_noise_texture_2d.tres" id="2_dcs7c"]
+[ext_resource type="Script" path="res://scripts/BackGround.gd" id="2_w2fg5"]
+[ext_resource type="Texture2D" uid="uid://dq254ch3qpeoc" path="res://sprites/new_noise_texture_2d3.tres" id="3_d6b0j"]
+[ext_resource type="Script" path="res://scripts/BackGround2.gd" id="4_4jr02"]
+[ext_resource type="Script" path="res://scripts/BackGround3.gd" id="6_i7m31"]
+[ext_resource type="FastNoiseLite" uid="uid://b27pb1weiuxeg" path="res://sprites/new_fast_noise_lite3.tres" id="9_76sd6"]
+[ext_resource type="FastNoiseLite" uid="uid://dg7kasp0v50s0" path="res://sprites/new_fast_noise_lite4.tres" id="10_5vd66"]
+[ext_resource type="Script" path="res://scripts/BackGround4.gd" id="11_503md"]
+
+[sub_resource type="Gradient" id="Gradient_oiski"]
+offsets = PackedFloat32Array(0.12462, 0.206687, 0.24924, 0.62614, 0.72997, 0.81459, 0.933131, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8yy3s"]
+height = 256
+normalize = false
+color_ramp = SubResource("Gradient_oiski")
+noise = ExtResource("9_76sd6")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n14r2"]
+height = 256
+normalize = false
+color_ramp = SubResource("Gradient_oiski")
+noise = ExtResource("10_5vd66")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n07op")
+
+[node name="Player" parent="." instance=ExtResource("1_suy00")]
+z_index = 5
+
+[node name="BackGround" type="Sprite2D" parent="Player"]
+show_behind_parent = true
+z_as_relative = false
+scale = Vector2(4, 4)
+texture = ExtResource("2_dcs7c")
+script = ExtResource("2_w2fg5")
+
+[node name="BackGround3" type="Sprite2D" parent="Player"]
+show_behind_parent = true
+z_as_relative = false
+scale = Vector2(4, 4)
+texture = ExtResource("3_d6b0j")
+script = ExtResource("6_i7m31")
+
+[node name="BackGround2" type="Sprite2D" parent="Player"]
+show_behind_parent = true
+z_as_relative = false
+texture_filter = 5
+scale = Vector2(8, 8)
+texture = ExtResource("2_8ph0p")
+script = ExtResource("4_4jr02")
+
+[node name="BackGround4" type="Sprite2D" parent="Player"]
+show_behind_parent = true
+z_as_relative = false
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_8yy3s")
+script = ExtResource("2_w2fg5")
+
+[node name="BackGround5" type="Sprite2D" parent="Player"]
+show_behind_parent = true
+z_as_relative = false
+scale = Vector2(4, 4)
+texture = SubResource("NoiseTexture2D_n14r2")
+script = ExtResource("11_503md")

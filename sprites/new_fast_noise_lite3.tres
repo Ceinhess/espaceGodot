@@ -1,0 +1,7 @@
+[gd_resource type="FastNoiseLite" format=3 uid="uid://b27pb1weiuxeg"]
+
+[resource]
+frequency = 0.0324
+offset = Vector3(156.52, 0, 0)
+fractal_octaves = 3
+domain_warp_type = 1
